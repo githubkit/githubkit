@@ -1,0 +1,13 @@
+//
+//  unittests.xcconfig
+//  GitHubKit
+//
+//  Created by Atsushi Nagase on 4/12/12.
+//  Copyright (c) 2012 LittleApps Inc. All rights reserved.
+//
+PRODUCT_NAME = $(TARGET_NAME)
+WRAPPER_EXTENSION = octest
+FRAMEWORK_SEARCH_PATHS = $(SDKROOT)/Developer/Library/Frameworks $(DEVELOPER_LIBRARY_DIR)/Frameworks
+GCC_PRECOMPILE_PREFIX_HEADER = YES
+GCC_PREFIX_HEADER = GitHubKit/GitHubKit-Prefix.pch
+INFOPLIST_FILE = GitHubKitTests/GitHubKitTests-Info.plist

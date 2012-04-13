@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'GitHubKit' target in the 'GitHubKit' project
+//
+
+#ifdef __OBJC__
+  #import <Foundation/Foundation.h>
+#endif

@@ -1,0 +1,11 @@
+//
+//  project-debug.xcconfig
+//  GitHubKit
+//
+//  Created by Atsushi Nagase on 4/11/12.
+//  Copyright (c) 2012 LittleApps Inc. All rights reserved.
+//
+#include "project.xcconfig"
+COPY_PHASE_STRIP = NO
+GCC_OPTIMIZATION_LEVEL = 0
+GCC_PREPROCESSOR_DEFINITIONS = DEBUG=1 $(inherited)

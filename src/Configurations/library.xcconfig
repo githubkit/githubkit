@@ -1,0 +1,16 @@
+//
+//  library.xcconfig
+//  GitHubKit
+//
+//  Created by Atsushi Nagase on 4/12/12.
+//  Copyright (c) 2012 LittleApps Inc. All rights reserved.
+//
+DSTROOT = /tmp/GitHubKit.dst
+SKIP_INSTALL = YES
+OTHER_LDFLAGS = -ObjC
+PRODUCT_NAME = $(TARGET_NAME)
+GCC_PRECOMPILE_PREFIX_HEADER = YES
+GCC_PREFIX_HEADER = GitHubKit/GitHubKit-Prefix.pch
+
+PRIVATE_HEADERS_FOLDER_PATH = GitHubKit/private
+PUBLIC_HEADERS_FOLDER_PATH = GitHubKit

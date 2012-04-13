@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		85A1BEDE1538094F00544D6A /* appledoc */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 85A1BEE21538094F00544D6A /* Build configuration list for PBXAggregateTarget "appledoc" */;
+			buildPhases = (
+				85A1BEE41538095C00544D6A /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = appledoc;
+			productName = appledoc;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		85319CEB15376CFB00577510 /* GitHubKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 85C4B2E31535D0F0009DE449 /* GitHubKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		85319CF015376F1A00577510 /* GHKAPIRequestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 85319CED15376F1A00577510 /* GHKAPIRequestTests.m */; };
@@ -398,6 +412,7 @@
 			targets = (
 				85C4B2DA1535D0EF009DE449 /* GitHubKit */,
 				85C4B2EA1535D0F0009DE449 /* GitHubKitTests */,
+				85A1BEDE1538094F00544D6A /* appledoc */,
 			);
 		};
 /* End PBXProject section */
@@ -414,6 +429,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		85A1BEE41538095C00544D6A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "~/local/bin/appledoc .\nmv ../docs/html ../docs/docs";
+		};
 		85C4B2E91535D0F0009DE449 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -508,6 +536,27 @@
 			};
 			name = AdHoc;
 		};
+		85A1BEDF1538094F00544D6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		85A1BEE01538094F00544D6A /* AdHoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = AdHoc;
+		};
+		85A1BEE11538094F00544D6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		85C4B2FD1535D0F0009DE449 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 85C4B30B1535D3B9009DE449 /* project-debug.xcconfig */;
@@ -553,6 +602,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		85A1BEE21538094F00544D6A /* Build configuration list for PBXAggregateTarget "appledoc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85A1BEDF1538094F00544D6A /* Debug */,
+				85A1BEE01538094F00544D6A /* AdHoc */,
+				85A1BEE11538094F00544D6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		85C4B2D51535D0EF009DE449 /* Build configuration list for PBXProject "GitHubKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -13,6 +13,9 @@
 @class GHKUser;
 @interface GHKGitHub : NSObject
 
+/**
+ * Current user if logged in
+ */
 @property (nonatomic,strong) GHKUser *currentUser;
 @property (nonatomic,strong) NSString *accessToken;
 @property (nonatomic,strong) NSString *clientId;

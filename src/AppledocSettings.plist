@@ -7,6 +7,7 @@
 	<key>--ignore</key>
 	<array>
 		<string>3rd Party</string>
+		<string>Categories</string>
 	</array>
 	<key>--logformat</key>
 	<integer>1</integer>
@@ -19,14 +20,16 @@
 	<key>--project-company</key>
 	<string>LittleApps Inc.</string>
 	<key>--project-name</key>
-	<string>appledoc</string>
+	<string>GitHubKit</string>
 	<key>--repeat-first-par</key>
 	<false/>
 	<key>--templates</key>
 	<string>./Templates</string>
 	<key>--verbose</key>
-	<integer>0</integer>
+	<string>xcode</string>
 	<key>--output</key>
-	<string>../docs</string>
+	<string>../docs/source</string>
+	<key>--docset-copyright</key>
+	<string>Copyright © 2012 LittleApps Inc. All rights reserved.</string>
 </dict>
 </plist>

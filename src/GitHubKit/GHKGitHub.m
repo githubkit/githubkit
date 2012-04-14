@@ -19,17 +19,16 @@
 
 @synthesize accessToken = _accessToken;
 @synthesize clientId = _clientId;
-@synthesize currentUser = _currentUser;
-@synthesize redirectUri = _redirectUri;
+@synthesize callbackUrl = _callbackUrl;
 @synthesize secret = _secret;
 
 - (id)initWithClientId:(NSString *)clientId
                 secret:(NSString *)secret
-           redirectUri:(NSString *)redirectUri {
+           callbackUrl:(NSString *)callbackUrl {
   if(self=[self init]) {
     self.clientId = clientId;
     self.secret = secret;
-    self.redirectUri = redirectUri;
+    self.callbackUrl = callbackUrl;
   }
   return self;
 }
@@ -50,13 +49,13 @@
 - (NSURL *)loginURLWithScope:(NSArray *)scope {
   return [NSURL URLWithString:
           [NSString stringWithFormat:
-           GHKLoginFormUriFormat, self.clientId, self.redirectUri,
+           GHKLoginFormUriFormat, self.clientId, self.callbackUrl,
            [scope componentsJoinedByString:@","]]];
 }
 
 - (BOOL)handleOpenURL:(NSURL *)URL
     completionHandler:(void (^)(GHKAPIResponse *res))completionHandler {
-  if(![URL.absoluteString hasPrefix:self.redirectUri])
+  if(![URL.absoluteString hasPrefix:self.callbackUrl])
     return NO;
   GHKAPIResponse *res = [[GHKAPIResponse alloc] init];
   NSDictionary *query = [URL.query queryContentsUsingEncoding:NSUTF8StringEncoding];
@@ -88,10 +87,8 @@
      self.accessToken = accessToken;
      [self sendAsynchronousRequest:[GHKAPIRequest requestWithURL:GHKAPIURL(GHKAPIUser)]
                  completionHandler:^(GHKAPIResponse *res) {
-       if([res.first isKindOfClass:[GHKUser class]])
-         self.currentUser = res.first;
-       completionHandler(res);
-     }];
+                   completionHandler(res);
+                 }];
    }];
   return YES;
   
@@ -128,7 +125,6 @@
 
 - (void)logout {
   self.accessToken = nil;
-  self.currentUser = nil;
 }
 
 @end

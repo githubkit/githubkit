@@ -1,1 +1,3 @@
-
+[submodule "docs"]
+	path = docs
+	url = git@github.com:githubkit/githubkit.github.com.git

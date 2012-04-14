@@ -22,4 +22,5 @@ extern NSString *const GHKAccessTokenUri;
 extern NSString *const GHKErrorDomain;
 extern NSString *const GHKLoginFormUriFormat;
 
+/** GHKAPIURL */
 NSURL *GHKAPIURL(NSString *api, ...);

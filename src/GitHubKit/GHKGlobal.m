@@ -8,9 +8,10 @@
 
 #import "GHKGlobal.h"
 
+NSString *const GHKAPIHost = @"https://api.github.com";
+
 NSString *const GHKAPIForkGist  = @"/gists/%@/fork";
 NSString *const GHKAPIGists = @"/gists";
-NSString *const GHKAPIHost = @"https://api.github.com";
 NSString *const GHKAPIMyGists = @"/gists";
 NSString *const GHKAPIPublicGists = @"/gists/public";
 NSString *const GHKAPISingleGist = @"/gists/%@";
@@ -18,6 +19,9 @@ NSString *const GHKAPIStarGist  = @"/gists/%@/star";
 NSString *const GHKAPIStarredGists = @"/gists/starred";
 NSString *const GHKAPIUser  = @"/user";
 NSString *const GHKAPIUserGists = @"/users/%@/gists";
+NSString *const GHKAPIGistComments  = @"/gists/%@/comments";
+NSString *const GHKAPISingleGistComment  = @"/gists/comments/%@";
+
 NSString *const GHKAccessTokenUri = @"https://github.com/login/oauth/access_token";
 NSString *const GHKLoginFormUriFormat = @"https://github.com/login/oauth/authorize?client_id=%@&redirect_uri=%@&scope=%@";
 

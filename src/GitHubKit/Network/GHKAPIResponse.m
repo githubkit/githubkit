@@ -16,6 +16,7 @@
 @synthesize nextURL = _nextURL;
 @synthesize prevURL = _prevURL;
 @synthesize firstURL = _firstURL;
+@synthesize lastURL = _lastURL;
 @synthesize httpResponse = _httpResponse;
 @synthesize error = _error;
 
@@ -73,6 +74,7 @@
   self.nextURL = [dict valueForKey:@"next"];
   self.prevURL = [dict valueForKey:@"prev"];
   self.firstURL = [dict valueForKey:@"first"];
+  self.lastURL = [dict valueForKey:@"last"];
   [self reset];
 }
 

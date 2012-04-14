@@ -29,8 +29,8 @@
   NSError *error = nil;
   NSStringEncoding encoding;
   NSString *ret = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForNamedAsset:name]
-                               usedEncoding:&encoding
-                                      error:&error];
+                                        usedEncoding:&encoding
+                                               error:&error];
   if(error) NSLog(@"%@", error);
   return ret;
 }

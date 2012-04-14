@@ -76,7 +76,7 @@
   do {
     filename = [NSString stringWithFormat:@"Untitled %d.txt", n++];
   } while ([self fileWithFilename:filename]);
-  GHKGistFile *file = [[GHKGistFile alloc] initWithGist:self];
+  GHKGistFile *file = [[GHKGistFile alloc] init];
   file.filename = filename;
   return file;
 }
@@ -105,7 +105,7 @@
     NSDictionary *fileDic = [dictionary objectForKey:@"files"];
     NSMutableArray *buf = [NSMutableArray array];
     [fileDic enumerateKeysAndObjectsUsingBlock:^(id key, id value, BOOL *stop) {
-      [buf addObject:[[GHKGistFile alloc] initWithDictionary:value gist:self]];
+      [buf addObject:[[GHKGistFile alloc] initWithDictionary:value]];
     }];
     self.files = buf;
     self.createdAt = [NSDate dateFromRFC3339String:[dictionary valueForKey:@"created_at"]];

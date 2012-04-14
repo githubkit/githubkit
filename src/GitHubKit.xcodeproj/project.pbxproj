@@ -86,6 +86,7 @@
 		85319CED15376F1A00577510 /* GHKAPIRequestTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHKAPIRequestTests.m; sourceTree = "<group>"; };
 		85319CEE15376F1A00577510 /* GHKAPIResponseTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHKAPIResponseTests.h; sourceTree = "<group>"; };
 		85319CEF15376F1A00577510 /* GHKAPIResponseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHKAPIResponseTests.m; sourceTree = "<group>"; };
+		856A097115391476006BC3D3 /* AppledocSettings.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AppledocSettings.plist; sourceTree = SOURCE_ROOT; };
 		85C4B2DB1535D0EF009DE449 /* libGitHubKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGitHubKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		85C4B2DE1535D0EF009DE449 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		85C4B2E21535D0F0009DE449 /* GitHubKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GitHubKit-Prefix.pch"; sourceTree = "<group>"; };
@@ -244,6 +245,7 @@
 		85C4B3091535D310009DE449 /* Configurations */ = {
 			isa = PBXGroup;
 			children = (
+				856A097115391476006BC3D3 /* AppledocSettings.plist */,
 				85C4B30A1535D338009DE449 /* project.xcconfig */,
 				85C4B30B1535D3B9009DE449 /* project-debug.xcconfig */,
 				85C4B30C1535D3C3009DE449 /* project-release.xcconfig */,
@@ -440,7 +442,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "~/local/bin/appledoc .\nmv ../docs/html ../docs/docs";
+			shellScript = "BASE=../docs/source\nrm -rf $BASE/docs\nrm -rf $BASE/html\n~/local/bin/appledoc .\nmv $BASE/html $BASE/docs";
 		};
 		85C4B2E91535D0F0009DE449 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -610,6 +612,7 @@
 				85A1BEE11538094F00544D6A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		85C4B2D51535D0EF009DE449 /* Build configuration list for PBXProject "GitHubKit" */ = {
 			isa = XCConfigurationList;

@@ -49,7 +49,7 @@
     }
     req.cachePolicy = NSURLRequestReloadIgnoringCacheData;
   }
-  if(TTIsStringWithAnyText(self.accessToken)&&self.requireAuthentication)
+  if(TTIsStringWithAnyText(self.accessToken))
     [req setValue:[NSString stringWithFormat:@"bearer %@",self.accessToken] forHTTPHeaderField:@"Authorization"];
   return [req copy];
 }

@@ -24,3 +24,9 @@ extern NSString *const GHKLoginFormUriFormat;
 
 /** GHKAPIURL */
 NSURL *GHKAPIURL(NSString *api, ...);
+
+/**  */
+void GHKNetworkRequestStarted();
+
+/**  */
+void GHKNetworkRequestStopped();

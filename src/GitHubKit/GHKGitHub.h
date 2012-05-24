@@ -21,6 +21,8 @@
 @property (nonatomic,strong) NSString *callbackUrl;
 /** Secret Key */
 @property (nonatomic,strong) NSString *secret;
+/** The client is logged in */
+@property (nonatomic,readonly) BOOL isLoggedIn;
 
 ///---------------------------------------------------------------------------------------
 /// @name Initialization

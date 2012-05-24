@@ -253,7 +253,9 @@
 				85C4B2DD1535D0EF009DE449 /* Frameworks */,
 				85C4B2DC1535D0EF009DE449 /* Products */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
 		};
 		85C4B2DC1535D0EF009DE449 /* Products */ = {
 			isa = PBXGroup;
@@ -860,7 +862,7 @@
 		};
 		85E65EEA156DD9AD009BFC0F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 85E65F2E156DDD9F009BFC0F /* unittests.xcconfig */;
+			baseConfigurationReference = 85E65F2A156DDD9F009BFC0F /* library-mac.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;

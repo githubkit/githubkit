@@ -13,7 +13,10 @@
 #import "GHKUser.h"
 #import "NSStringAdditions.h"
 #import "TTGlobalCore.h"
+
+#if __IPHONE_OS_VERSION_MIN_REQUIRED
 #import "TTGlobalNetwork.h"
+#endif
 
 @implementation GHKGitHub
 
@@ -107,9 +110,7 @@
     completionHandler(res2);
     return;
   }
-  dispatch_async(dispatch_get_main_queue(), ^{
-    TTNetworkRequestStarted();
-  });
+  GHKNetworkRequestStarted();
   [NSURLConnection
    sendAsynchronousRequest:req
    queue:[NSOperationQueue mainQueue]
@@ -117,10 +118,12 @@
      [res2 processResponse:res data:data error:error];
      res2.success = [request isExpectedStatusCode:res2.httpResponse.statusCode];
      completionHandler(res2);
-     dispatch_async(dispatch_get_main_queue(), ^{
-       TTNetworkRequestStopped();
-     });
+     GHKNetworkRequestStopped();
    }];
+}
+
+- (BOOL)isLoggedIn {
+  return TTIsStringWithAnyText(self.accessToken);
 }
 
 - (void)logout {

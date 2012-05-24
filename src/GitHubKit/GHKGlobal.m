@@ -34,3 +34,29 @@ NSURL *GHKAPIURL(NSString *api, ...) {
   va_end(ap);
   return [NSURL URLWithString:[GHKAPIHost stringByAppendingString:str]];
 }
+
+
+#if __IPHONE_OS_VERSION_MIN_REQUIRED
+
+#import "TTGlobalNetwork.h"
+
+void GHKNetworkRequestStarted() {
+  dispatch_async(dispatch_get_main_queue(), ^{
+    TTNetworkRequestStopped();
+  });
+}
+
+void GHKNetworkRequestStopped() {
+  dispatch_async(dispatch_get_main_queue(), ^{
+    TTNetworkRequestStarted();
+  });
+}
+
+#else
+
+void GHKNetworkRequestStarted() {
+}
+
+void GHKNetworkRequestStopped() {
+}
+#endif

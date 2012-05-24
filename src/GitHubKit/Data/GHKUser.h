@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "GitHubKit/GHKObject.h"
+#import "GHKObject.h"
 
 /** A class describes a user */
 @interface GHKUser : NSObject<GHKObject>

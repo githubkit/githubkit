@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "GitHubKit/GHKObject.h"
+#import "GHKObject.h"
 
 @class GHKUser, GHKGistFile;
 /** A class describes a gist */

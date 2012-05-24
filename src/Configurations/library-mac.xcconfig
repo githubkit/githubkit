@@ -1,0 +1,16 @@
+//
+//  library-mac.xcconfig
+//  GitHubKit
+//
+//  Created by Atsushi Nagase on 4/12/12.
+//  Copyright (c) 2012 LittleApps Inc. All rights reserved.
+//
+
+ARCHS = $(ARCHS_STANDARD_64_BIT)
+SDKROOT = macosx
+GCC_VERSION = com.apple.compilers.llvm.clang.1_0
+MACOSX_DEPLOYMENT_TARGET = 10.7
+FRAMEWORK_SEARCH_PATHS = $(inherited) "$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks"
+DEBUG_INFORMATION_FORMAT = dwarf-with-dsym
+GCC_ENABLE_OBJC_EXCEPTIONS = YES
+GCC_WARN_64_TO_32_BIT_CONVERSION = YES

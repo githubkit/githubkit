@@ -14,20 +14,6 @@
 #import "TTGlobalCore.h"
 
 @implementation GHKGist
-@synthesize comments = _comments;
-@synthesize createdAt = _createdAt;
-@synthesize deletedFiles = _deletedFiles;
-@synthesize files = _files;
-@synthesize gistDescription = _gistDescription;
-@synthesize gistId = _gistId;
-@synthesize gitPullUrl = _gitPullUrl;
-@synthesize gitPushUrl = _gitPushUrl;
-@synthesize htmlUrl = _htmlUrl;
-@synthesize isPublic = _isPublic;
-@synthesize isStarred = _isStarred;
-@synthesize updatedAt = _updatedAt;
-@synthesize url = _url;
-@synthesize user = _user;
 
 - (BOOL)isNew {
   return !TTIsStringWithAnyText(self.gistId);

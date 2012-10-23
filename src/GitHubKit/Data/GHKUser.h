@@ -18,10 +18,20 @@
 @property (nonatomic,strong) NSString *gravatarId;
 /** Login ID */
 @property (nonatomic,strong) NSString *login;
+/** Company */
+@property (nonatomic,strong) NSString *company;
+/** Email */
+@property (nonatomic,strong) NSString *email;
 /** Avatar image URL */
 @property (nonatomic,strong) NSURL *avatarUrl;
 /** Single JSON URL that describes the user */
 @property (nonatomic,strong) NSURL *url;
+/** Biography */
+@property (nonatomic,strong) NSString *bio;
+/** Name */
+@property (nonatomic,strong) NSString *name;
+/** Blog URL */
+@property (nonatomic,strong) NSURL *blogUrl;
 
 
 @end

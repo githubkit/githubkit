@@ -11,13 +11,6 @@
 
 @implementation GHKGistFile
 
-@synthesize backup = _backup;
-@synthesize content = _content;
-@synthesize filename = _filename;
-@synthesize language = _language;
-@synthesize rawUrl = _rawUrl;
-@synthesize size = _size;
-
 #pragma mark -
 
 - (NSDictionary *)dictionary {

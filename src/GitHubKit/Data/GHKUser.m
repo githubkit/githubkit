@@ -7,23 +7,32 @@
 //
 
 #import "GHKUser.h"
+#import "TTGlobalCore.h"
 
 @implementation GHKUser
 
-@synthesize avatarUrl = _avatarUrl;
-@synthesize gravatarId = _gravatarId;
-@synthesize login = _login;
-@synthesize url = _url;
-@synthesize userId = _userId;
-
-
 - (id)initWithDictionary:(NSDictionary *)dictionary {
   if(self=[self init]) {
-    self.avatarUrl = [NSURL URLWithString:[dictionary valueForKey:@"avatar_url"]];
-    self.gravatarId = [dictionary valueForKey:@"gravatar_id"];
-    self.login = [dictionary valueForKey:@"login"];
-    self.url = [NSURL URLWithString:[dictionary valueForKey:@"url"]];
-    self.userId = [[dictionary valueForKey:@"id"] integerValue];
+    if(TTIsStringWithAnyText([dictionary valueForKey:@"avatar_url"]))
+      self.avatarUrl = [NSURL URLWithString:[dictionary valueForKey:@"avatar_url"]];
+    if(TTIsStringWithAnyText([dictionary valueForKey:@"gravatar_id"]))
+      self.gravatarId = [dictionary valueForKey:@"gravatar_id"];
+    if(TTIsStringWithAnyText([dictionary valueForKey:@"login"]))
+      self.login = [dictionary valueForKey:@"login"];
+    if(TTIsStringWithAnyText([dictionary valueForKey:@"name"]))
+      self.name = [dictionary valueForKey:@"name"];
+    if(TTIsStringWithAnyText([dictionary valueForKey:@"url"]))
+      self.url = [NSURL URLWithString:[dictionary valueForKey:@"url"]];
+    if([dictionary valueForKey:@"id"])
+      self.userId = [[dictionary valueForKey:@"id"] integerValue];
+    if(TTIsStringWithAnyText([dictionary valueForKey:@"company"]))
+      self.company = [dictionary valueForKey:@"company"];
+    if(TTIsStringWithAnyText([dictionary valueForKey:@"email"]))
+      self.email = [dictionary valueForKey:@"email"];
+    if(TTIsStringWithAnyText([dictionary valueForKey:@"bio"]))
+      self.bio = [dictionary valueForKey:@"bio"];
+    if(TTIsStringWithAnyText([dictionary valueForKey:@"blogUrl"]))
+      self.blogUrl = [NSURL URLWithString:[dictionary valueForKey:@"blogUrl"]];
   }
   return self;
 }

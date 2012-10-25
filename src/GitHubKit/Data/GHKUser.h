@@ -32,6 +32,8 @@
 @property (nonatomic,strong) NSString *name;
 /** Blog URL */
 @property (nonatomic,strong) NSURL *blogUrl;
+/** Created at */
+@property (nonatomic,strong) NSDate *createdAt;
 
 
 @end

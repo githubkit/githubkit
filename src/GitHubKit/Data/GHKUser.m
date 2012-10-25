@@ -8,6 +8,7 @@
 
 #import "GHKUser.h"
 #import "TTGlobalCore.h"
+#import "NSDate+InternetDateTime.h"
 
 @implementation GHKUser
 
@@ -33,6 +34,9 @@
       self.bio = [dictionary valueForKey:@"bio"];
     if(TTIsStringWithAnyText([dictionary valueForKey:@"blogUrl"]))
       self.blogUrl = [NSURL URLWithString:[dictionary valueForKey:@"blogUrl"]];
+    if(TTIsStringWithAnyText([dictionary valueForKey:@"created_at"]))
+      self.createdAt = [NSDate dateFromInternetDateTimeString:[dictionary valueForKey:@"created_at"]
+                                                   formatHint:DateFormatHintRFC3339];
   }
   return self;
 }

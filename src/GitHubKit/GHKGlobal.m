@@ -42,13 +42,13 @@ NSURL *GHKAPIURL(NSString *api, ...) {
 
 void GHKNetworkRequestStarted() {
   dispatch_async(dispatch_get_main_queue(), ^{
-    TTNetworkRequestStopped();
+    TTNetworkRequestStarted();
   });
 }
 
 void GHKNetworkRequestStopped() {
   dispatch_async(dispatch_get_main_queue(), ^{
-    TTNetworkRequestStarted();
+    TTNetworkRequestStopped();
   });
 }
 

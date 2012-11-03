@@ -9,6 +9,8 @@
 #import "GHKGistFile.h"
 #import "TTGlobalCore.h"
 
+#define MARKDOWN_EXTENSIONS @[@".markdown@", @"mdown", @"mkdn", @"md", @"mkd", @"mdwn", @"mdtxt", @"mdtext", @"text"]
+
 @implementation GHKGistFile
 
 #pragma mark -
@@ -28,6 +30,19 @@
     [self.content isEqualToString:self.backup.content] &&
     [self.filename isEqualToString:self.backup.filename]
     );
+}
+
+- (BOOL)isMarkdown {
+  return [MARKDOWN_EXTENSIONS containsObject:self.rawUrl.pathExtension];
+}
+
+- (NSComparisonResult)compare:(GHKGistFile *)other {
+  if([other isKindOfClass:[GHKGistFile class]]) {
+    if(other.isMarkdown && !self.isMarkdown)
+      return NSOrderedDescending;
+    return [self.filename compare:other.filename];
+  }
+  return NSOrderedSame;
 }
 
 #pragma mark - initializers
@@ -71,6 +86,10 @@
     return [((GHKGistFile *)object).filename isEqualToString:self.filename];
   }
   return NO;
+}
+
+- (NSString *)description {
+  return [NSString stringWithFormat:@"<%@: %@>", NSStringFromClass(self.class), self.filename];
 }
 
 #pragma mark - NSCoding

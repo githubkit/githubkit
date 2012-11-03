@@ -90,10 +90,11 @@
     [[GHKUser alloc] initWithDictionary:[dictionary objectForKey:@"user"]] : nil;
     NSDictionary *fileDic = [dictionary objectForKey:@"files"];
     NSMutableArray *buf = [NSMutableArray array];
-    [fileDic enumerateKeysAndObjectsUsingBlock:^(id key, id value, BOOL *stop) {
-      [buf addObject:[[GHKGistFile alloc] initWithDictionary:value]];
+    [fileDic enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+      [buf addObject:[[GHKGistFile alloc] initWithDictionary:obj]];
     }];
-    self.files = buf;
+    [buf sortUsingSelector:@selector(compare:)];
+    self.files = buf.copy;
     self.createdAt = [NSDate dateFromRFC3339String:[dictionary valueForKey:@"created_at"]];
     self.updatedAt = [NSDate dateFromRFC3339String:[dictionary valueForKey:@"updated_at"]];
     self.gistDescription = TTIsStringWithAnyText([dictionary valueForKey:@"description"]) ? [dictionary valueForKey:@"description"] : @"";

@@ -25,6 +25,8 @@
 @property (nonatomic,strong) NSString *language;
 /** Raw file URL */
 @property (nonatomic,strong) NSURL *rawUrl;
+/** Is markdown file */
+@property (nonatomic,readonly) BOOL isMarkdown;
 
 ///---------------------------------------------------------------------------------------
 /// @name Editing
